@@ -43,7 +43,7 @@ add_action( 'after_setup_theme', 'petrock_woocommerce_setup' );
  * @return void
  */
 function petrock_woocommerce_scripts() {
-	wp_enqueue_style( 'petrock-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), _S_VERSION );
+	wp_enqueue_style( 'hemerken-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), _S_VERSION );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
@@ -57,7 +57,7 @@ function petrock_woocommerce_scripts() {
 			font-style: normal;
 		}';
 
-	wp_add_inline_style( 'petrock-woocommerce-style', $inline_font );
+	wp_add_inline_style( 'hemerken-woocommerce-style', $inline_font );
 }
 add_action( 'wp_enqueue_scripts', 'petrock_woocommerce_scripts' );
 
@@ -181,11 +181,11 @@ if ( ! function_exists( 'petrock_woocommerce_cart_link' ) ) {
 	 */
 	function petrock_woocommerce_cart_link() {
 		?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'petrock' ); ?>">
+		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'hemerken' ); ?>">
 			<?php
 			$item_count_text = sprintf(
 				/* translators: number of items in the mini cart. */
-				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'petrock' ),
+				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'hemerken' ),
 				WC()->cart->get_cart_contents_count()
 			);
 			?>

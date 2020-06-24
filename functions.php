@@ -25,9 +25,9 @@ if ( ! function_exists( 'petrock_setup' ) ) :
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on HemerkenGT, use a find and replace
-		 * to change 'petrock' to the name of your theme in all the template files.
+		 * to change 'hemerken' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'petrock', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'hemerken', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -50,7 +50,7 @@ if ( ! function_exists( 'petrock_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'primary' => esc_html__( 'Primary', 'petrock' ),
+				'primary' => esc_html__( 'Primary', 'hemerken' ),
 			)
 		);
 
@@ -145,30 +145,30 @@ function hemerken_gt_sidebar_init() {
  * Enqueue scripts and styles.
  */
 function petrock_scripts() {
-	wp_enqueue_style('petrock-bs-css' , get_template_directory_uri() . '/dist/css/bootstrap.min.css');
+	wp_enqueue_style('hemerken-bs-css' , get_template_directory_uri() . '/dist/css/bootstrap.min.css');
 
-	wp_enqueue_style('petrock-fontawesome' , get_template_directory_uri() . '/fonts/font-awesome/css/fontawesome.min.css');
+	wp_enqueue_style('hemerken-fontawesome' , get_template_directory_uri() . '/fonts/font-awesome/css/fontawesome.min.css');
 	
-	wp_enqueue_style( 'petrock-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'petrock-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'hemerken-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_style_add_data( 'hemerken-style', 'rtl', 'replace' );
 
 	wp_register_script('popper', 'https://unpkg.com/@popperjs/core@2.4.2/dist/umd/popper.min.js', false, '', true);
 	
 	wp_enqueue_script('popper');
 
-	wp_enqueue_script( 'petrock-tether', get_template_directory_uri() .
+	wp_enqueue_script( 'hemerken-tether', get_template_directory_uri() .
 	'/src/js/tether.js', array(),  _S_VERSION, true );
 
-	wp_enqueue_script( 'petrock-bootstrap', get_template_directory_uri() .
+	wp_enqueue_script( 'hemerken-bootstrap', get_template_directory_uri() .
 	'/src/js/bootstrap.min.js', array('jquery'), _S_VERSION, true );
 
-	wp_enqueue_script( 'petrock-bootstrap-hover', get_template_directory_uri() .
+	wp_enqueue_script( 'hemerken-bootstrap-hover', get_template_directory_uri() .
 	'/src/js/bootstrap-hover.js', array('jquery'),  _S_VERSION, true );
 
-	wp_enqueue_script( 'petrock-nav-scroll', get_template_directory_uri() .
+	wp_enqueue_script( 'hemerken-nav-scroll', get_template_directory_uri() .
 	'/src/js/nav-scroll.js', array('jquery'),  _S_VERSION, true );
 
-	wp_enqueue_script( 'petrock-skip-link-focus-fix', get_template_directory_uri() .
+	wp_enqueue_script( 'hemerken-skip-link-focus-fix', get_template_directory_uri() .
 	'/src/js/skip-link-focus-fix.js', array(),  _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

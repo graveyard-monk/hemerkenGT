@@ -56,6 +56,6 @@ function petrock_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function petrock_customize_preview_js() {
-	wp_enqueue_script( 'petrock-customizer', get_template_directory_uri() . '/dist/js/customizer.js', array( 'customize-preview' ),  _S_VERSION, true );
+	wp_enqueue_script( 'hemerken-customizer', get_template_directory_uri() . '/dist/js/customizer.js', array( 'customize-preview' ),  _S_VERSION, true );
 }
 add_action( 'customize_preview_init', 'petrock_customize_preview_js' );
