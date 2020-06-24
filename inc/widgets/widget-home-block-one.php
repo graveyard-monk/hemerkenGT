@@ -4,7 +4,7 @@
  *
  * @package    hemerken_gt
  * @author     GoblinThemes
- * @copyright  Copyright (c) 2017, GoblinThemes
+ * @copyright  Copyright (c) 2020, GoblinThemes
  * @license    http://www.gnu.org/licenses/gpl-2.0.html
  * @since      1.0.0
  */

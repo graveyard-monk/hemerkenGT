@@ -124,7 +124,23 @@ function petrock_content_width() {
 }
 add_action( 'after_setup_theme', 'petrock_content_width', 0 );
 
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function hemerken_gt_sidebar_init() {
 
+	register_sidebar( array(
+		'name'          => esc_html__( 'Homepage Content', 'hemerken-gt' ),
+		'id'            => 'homepage',
+		'description'   => esc_html__( 'Only put "Home One/Two/Three Columns" and "Advertisement" widgets here.', 'hemerken-gt' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title"><span>',
+		'after_title'   => '</span></h2>',
+	) );
+}
 /**
  * Enqueue scripts and styles.
  */
@@ -204,3 +220,20 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Registers custom widgets.
+ */
+function hemerken_gt_widgets_init() {
+
+	require trailingslashit( get_template_directory() ) . 'inc/widgets/widget-home-block-one.php';
+	register_widget( 'hemerken_gt_Block_One_Widget' );
+
+	require trailingslashit( get_template_directory() ) . 'inc/widgets/widget-home-block-two.php';
+	register_widget( 'hemerken_gt_Block_Two_Widget' );
+
+	require trailingslashit( get_template_directory() ) . 'inc/widgets/widget-home-block-three.php';
+	register_widget( 'hemerken_gt_Block_Three_Widget' );
+
+}
+add_action( 'widgets_init', 'hemerken_gt_widgets_init' );
