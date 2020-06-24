@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package PetrockGT
+ * @package HemerkenGT
  */
 
 if ( ! function_exists( 'petrock_posted_on' ) ) :

@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package PetrockGT
+ * @package HemerkenGT
  */
 
 get_header();

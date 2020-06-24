@@ -1,8 +1,8 @@
 <?php
 /**
- * PetrockGT Theme Customizer
+ * HemerkenGT Theme Customizer
  *
- * @package PetrockGT
+ * @package HemerkenGT
  */
 
 /**
