@@ -46,8 +46,8 @@ get_header();
 
 					<?php
 					/* translators: %1$s: smiley */
-					$petrock_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'hemerken' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$petrock_archive_content" );
+					$hemerken_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'hemerken' ), convert_smilies( ':)' ) ) . '</p>';
+					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$hemerken_archive_content" );
 
 					the_widget( 'WP_Widget_Tag_Cloud' );
 					?>

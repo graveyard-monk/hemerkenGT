@@ -12,7 +12,7 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
-if ( ! function_exists( 'petrock_setup' ) ) :
+if ( ! function_exists( 'hemerken_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -20,7 +20,7 @@ if ( ! function_exists( 'petrock_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function petrock_setup() {
+	function hemerken_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -75,7 +75,7 @@ if ( ! function_exists( 'petrock_setup' ) ) :
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'petrock_custom_background_args',
+				'hemerken_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -102,12 +102,12 @@ if ( ! function_exists( 'petrock_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'petrock_setup' );
+add_action( 'after_setup_theme', 'hemerken_setup' );
 
-function petrock_add_editor_style() {
+function hemerken_add_editor_style() {
 	add_editor_style('dist/css/editor-style.css');
 }
-add_action('admin_init', 'petrock_add_editor_style');
+add_action('admin_init', 'hemerken_add_editor_style');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -116,13 +116,13 @@ add_action('admin_init', 'petrock_add_editor_style');
  *
  * @global int $content_width
  */
-function petrock_content_width() {
+function hemerken_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'petrock_content_width', 1140 );
+	$GLOBALS['content_width'] = apply_filters( 'hemerken_content_width', 1140 );
 }
-add_action( 'after_setup_theme', 'petrock_content_width', 0 );
+add_action( 'after_setup_theme', 'hemerken_content_width', 0 );
 
 /**
  * Register widget area.
@@ -144,7 +144,7 @@ function hemerken_gt_sidebar_init() {
 /**
  * Enqueue scripts and styles.
  */
-function petrock_scripts() {
+function hemerken_scripts() {
 	wp_enqueue_style('hemerken-bs-css' , get_template_directory_uri() . '/dist/css/bootstrap.min.css');
 
 	wp_enqueue_style('hemerken-fontawesome' , get_template_directory_uri() . '/fonts/font-awesome/css/fontawesome.min.css');
@@ -175,7 +175,7 @@ function petrock_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'petrock_scripts' );
+add_action( 'wp_enqueue_scripts', 'hemerken_scripts' );
 
 /**
  * Implement the Custom Header feature.

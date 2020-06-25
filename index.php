@@ -56,14 +56,6 @@ get_header();
 				endwhile;
 			?>
 
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
 				<div class="notice">
 					<p><?php echo __('Please edit posts and set "Featured Posts" for this section.', 'hemerken-gt'); ?></p>
 					<p><a href="<?php echo home_url(); ?>/wp-admin/edit.php"><?php echo __('Okay, I\'m doing now &raquo;', 'hemerken-gt'); ?></a> | <a href="<?php echo get_template_directory_uri(); ?>/assets/img/how-to-featured.png" target="_blank"><?php echo __('How To &raquo;', 'hemerken-gt'); ?></a></p>

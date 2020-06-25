@@ -40,10 +40,10 @@
 				<?php
 			endif;
 
-			$petrock_description = get_bloginfo( 'description', 'display' );
-			if ( $petrock_description || is_customize_preview() ) :
+			$hemerken_description = get_bloginfo( 'description', 'display' );
+			if ( $hemerken_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $petrock_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+				<p class="site-description"><?php echo $hemerken_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
