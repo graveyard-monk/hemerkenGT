@@ -7,6 +7,65 @@
  * @package HemerkenGT
  */
 
+
+/**
+ * Custom Excerpt
+ */
+if ( ! function_exists( 'hemerken_gt_custom_excerpt' ) ) :
+
+	function hemerken_gt_custom_excerpt($limit) {
+	
+		$excerpt = explode(' ', get_the_excerpt(), $limit);
+	
+		if (count($excerpt)>=$limit) {
+			array_pop($excerpt);
+			$excerpt = implode(" ",$excerpt).'...';
+		} else {
+	
+		$excerpt = implode(" ",$excerpt);
+	
+		}
+		$excerpt = preg_replace('`[[^]]*]`','',$excerpt);
+		return $excerpt;
+	}
+	endif;
+
+	/**
+ * Set Post Views.
+ */
+if ( ! function_exists( 'hemerken_gt_set_post_views' ) ) :
+
+	function hemerken_gt_set_post_views($postID) {
+		$count_key = 'post_views_count';
+		$count = get_post_meta($postID, $count_key, true);
+		if($count==''){
+			$count = 0;
+			delete_post_meta($postID, $count_key);
+			add_post_meta($postID, $count_key, '0');
+		}else{
+			$count++;
+			update_post_meta($postID, $count_key, $count);
+		}
+	}
+
+endif;
+
+/**
+ * Search Filter 
+ */
+if ( ! function_exists( 'hemerken_gt_search_filter' ) ) :
+
+	function hemerken_gt_search_filter($query) {
+		if ($query->is_search) {
+			$query->set('post_type', 'post');
+		}
+		return $query;
+	}
+	
+	add_filter('pre_get_posts','hemerken_gt_search_filter');
+	
+	endif;
+
 if ( ! function_exists( 'hemerken_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.

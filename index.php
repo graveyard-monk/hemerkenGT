@@ -15,14 +15,23 @@
 get_header();
 ?>
 
-<div id="primary" class="content-area col-md-8">
-	<main id="main" class="site-main">
+<div id="primary" class="content-area col-md-8 clear">
+
+		<div id="home-welcome" class="clear">
+
+		<div id="featured-content">
 
 		<?php
 
 			$args = array(
 				'post_type'      => 'post',
-				'posts_per_page' => get_theme_mod('latest-posts-num', '5')+1			
+				'posts_per_page' => 7,
+				'meta_query' => array(
+					array(
+						'key'   => 'is_featured',
+						'value' => 'true'
+						)
+					)				
 				);
 
 				// The Query
@@ -56,15 +65,30 @@ get_header();
 				endwhile;
 			?>
 
-				<div class="notice">
-					<p><?php echo __('Please edit posts and set "Featured Posts" for this section.', 'hemerken-gt'); ?></p>
-					<p><a href="<?php echo home_url(); ?>/wp-admin/edit.php"><?php echo __('Okay, I\'m doing now &raquo;', 'hemerken-gt'); ?></a> | <a href="<?php echo get_template_directory_uri(); ?>/assets/img/how-to-featured.png" target="_blank"><?php echo __('How To &raquo;', 'hemerken-gt'); ?></a></p>
-				</div>
+				
+	
+
+		<main id="main" class="site-main clear">
+
+<div id="recent-content">
+
+<?php if ( is_active_sidebar( 'homepage' ) ) { ?>
+
+	<?php dynamic_sidebar( 'homepage' ); ?>
+
+<?php } else { ?>
+
+	<div class="notice">
+		<p><?php echo __('Put the "Home One/Two/Three Columns" widgets to the <strong>Homepage Content</strong> widget area.', 'hemerken-gt'); ?></p>
+		<p><a href="<?php echo home_url(); ?>/wp-admin/widgets.php"><?php echo __('Okay, I\'m doing now &raquo;', 'newsnow-pro'); ?></a>  | <a href="<?php echo get_template_directory_uri(); ?>/assets/img/how-to-home-widgets.png" target="_blank"><?php echo __('How To &raquo;', 'hemerken-gt'); ?></a></p>
+	</div>
+
+<?php } ?>							
+
+</div><!-- #recent-content -->		
 
 		</main><!-- #main -->
-	</div><!-- #primary -->
 
-<div class="col-md-4">
-	<?php get_sidebar(); ?>
-</div>
+		</div><!-- #primary -->
+
 <?php get_footer();

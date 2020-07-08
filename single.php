@@ -8,6 +8,10 @@
  */
 
 get_header();
+
+if ( function_exists( 'hemerken_gt_set_post_views' ) ) :
+	hemerken_gt_set_post_views(get_the_ID());
+endif;
 ?>
 
 <div id="primary" class="content-area col-md-8">

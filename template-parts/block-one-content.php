@@ -42,7 +42,7 @@
 	</div><!-- .entry-meta -->
 
 	<div class="entry-summary">
-		<?php echo hemerken_gt_custom_excerpt( get_theme_mod('home-excerpt-length','18') ); ?>
+		<?php echo hemerken_gt_custom_excerpt( get_theme_mod('homepage-excerpt-length','18') ); ?>
 	</div><!-- .entry-summary -->
 
 </div><!-- .hentry -->
